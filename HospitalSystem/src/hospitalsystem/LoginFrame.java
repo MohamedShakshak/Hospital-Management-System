@@ -278,9 +278,9 @@ public class LoginFrame extends javax.swing.JFrame {
             rs=stmt.executeQuery();
             if(rs.next())
             {
-                //int userid=rs.getInt("id");
-               /*this.setVisible(false);
-                LoginFrame loginFrame = new LoginFrame(userid,username,password);*/
+                int userid=rs.getInt("id");
+               this.setVisible(false);
+               new Main(userid, username, type).setVisible(true);
                 JOptionPane.showMessageDialog(this, "Login Succesfuly");
             }
             else
