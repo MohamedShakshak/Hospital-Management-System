@@ -71,8 +71,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(47, 31, 61));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mohamed Shakshak\\OneDrive\\سطح المكتب\\hos22222.jpg")); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalsystem/hos_image.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

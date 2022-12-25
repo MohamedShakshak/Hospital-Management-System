@@ -84,9 +84,8 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Mohamed Shakshak\OneDrive\&#x633;&#x637;&#x62d; &#x627;&#x644;&#x645;&#x643;&#x62a;&#x628;\hos22222.jpg"/>
+                  <Image iconType="3" name="/hospitalsystem/hos_image.jpg"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -380,7 +380,7 @@ public class Patient extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_patientMouseClicked
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         if (!edt_pname.getText().isEmpty() && !edt_pphone.getText().isEmpty() && !txt_address.getText().isEmpty()) {
             String pname = edt_pname.getText();
             String phone = edt_pphone.getText();

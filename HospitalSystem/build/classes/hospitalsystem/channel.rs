@@ -1,0 +1,12 @@
+channel$1
+channel$2
+channel$3
+channel$4
+channel$5
+channel$6
+channel$Patient
+channel$Doctor
+channel$7
+channel$8
+channel$9
+channel

@@ -4,6 +4,8 @@
  */
 package hospitalsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mohamed Shakshak
@@ -17,6 +19,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    int idd;
     int newid;
     String uname;
     String usertype;
@@ -29,22 +32,23 @@ public class Main extends javax.swing.JFrame {
         this.usertype = utype;
         lbl_utype.setText(usertype);
         this.newid = id;
-        String UStype = lbl_utype.getText();
+        
+        idd=newid;
+        
+     /*   String UStype = lbl_utype.getText();
         if (UStype.equalsIgnoreCase("Doctor")) {
             btn_patient.setVisible(false);
-            btn_Cchannel.setVisible(false);
-            btn_Vprescription.setVisible(false);
-            btn_critem.setVisible(false);
+           
+            btn_MedCap.setVisible(false);
         } else if (UStype.equals("Receptionst")) {
             btn_doctor.setVisible(false);
-            btn_Vprescription.setVisible(false);
+           
 
         } else {
             btn_patient.setVisible(false);
             btn_doctor.setVisible(false);
-            btn_Cchannel.setVisible(false);
-            btn_Vchannel.setVisible(false);
-        }
+    
+        }*/
     }
 
     /**
@@ -60,12 +64,9 @@ public class Main extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_patient = new javax.swing.JButton();
         btn_doctor = new javax.swing.JButton();
-        btn_Vchannel = new javax.swing.JButton();
         btn_Vdoctors = new javax.swing.JButton();
         btn_logout = new javax.swing.JButton();
-        btn_Cchannel = new javax.swing.JButton();
-        btn_critem = new javax.swing.JButton();
-        btn_Vprescription = new javax.swing.JButton();
+        btn_MedCap = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -87,24 +88,35 @@ public class Main extends javax.swing.JFrame {
 
         btn_doctor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_doctor.setText("Doctor");
-
-        btn_Vchannel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_Vchannel.setText("View Channel");
+        btn_doctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_doctorActionPerformed(evt);
+            }
+        });
 
         btn_Vdoctors.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_Vdoctors.setText("View Doctors");
+        btn_Vdoctors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VdoctorsActionPerformed(evt);
+            }
+        });
 
         btn_logout.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_logout.setText("Logout");
+        btn_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logoutActionPerformed(evt);
+            }
+        });
 
-        btn_Cchannel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_Cchannel.setText("Create Channel");
-
-        btn_critem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_critem.setText("Create Item");
-
-        btn_Vprescription.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_Vprescription.setText("View Prescription");
+        btn_MedCap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_MedCap.setText("Medicine Cabinet");
+        btn_MedCap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MedCapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,12 +127,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Vdoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_critem, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_MedCap, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_patient, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Cchannel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Vchannel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Vprescription))
+                    .addComponent(btn_doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 45, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -128,21 +137,15 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(btn_patient, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(53, 53, 53)
                 .addComponent(btn_doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(btn_Cchannel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(btn_Vchannel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(btn_Vprescription, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(btn_critem, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(57, 57, 57)
+                .addComponent(btn_MedCap, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
                 .addComponent(btn_Vdoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(63, 63, 63)
                 .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(47, 31, 61));
@@ -219,7 +222,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,6 +245,34 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Patient().setVisible(true);
     }//GEN-LAST:event_btn_patientActionPerformed
+
+    private void btn_doctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_doctorActionPerformed
+        // TODO add your handling code here:
+        if(usertype.equals("Doctor"))
+        {
+            new Doctor(idd,usertype).setVisible(true);
+        }
+    }//GEN-LAST:event_btn_doctorActionPerformed
+
+    private void btn_VdoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VdoctorsActionPerformed
+        // TODO add your handling code here:
+        new ViewDoctor().setVisible(true);
+    }//GEN-LAST:event_btn_VdoctorsActionPerformed
+
+    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
+        // TODO add your handling code here:
+       int a= JOptionPane.showConfirmDialog(this, "Do You want to Exit","Confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(a==JOptionPane.YES_OPTION)
+        {
+           this.setVisible(false);
+           new LoginFrame().setVisible(true);
+        }
+    }//GEN-LAST:event_btn_logoutActionPerformed
+
+    private void btn_MedCapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MedCapActionPerformed
+        // TODO add your handling code here:
+        new MedicineCabinet().setVisible(true);
+    }//GEN-LAST:event_btn_MedCapActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,11 +310,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Cchannel;
-    private javax.swing.JButton btn_Vchannel;
+    private javax.swing.JButton btn_MedCap;
     private javax.swing.JButton btn_Vdoctors;
-    private javax.swing.JButton btn_Vprescription;
-    private javax.swing.JButton btn_critem;
     private javax.swing.JButton btn_doctor;
     private javax.swing.JButton btn_logout;
     private javax.swing.JButton btn_patient;

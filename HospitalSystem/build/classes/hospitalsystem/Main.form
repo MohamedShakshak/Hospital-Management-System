@@ -68,7 +68,7 @@
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="97" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,12 +89,9 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btn_logout" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="btn_Vdoctors" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="btn_critem" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="btn_MedCap" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="btn_patient" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="btn_doctor" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="btn_Cchannel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="btn_Vchannel" alignment="1" min="-2" pref="134" max="-2" attributes="0"/>
-                          <Component id="btn_Vprescription" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
                   </Group>
@@ -105,21 +102,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="btn_patient" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="btn_doctor" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="btn_Cchannel" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="btn_Vchannel" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="btn_Vprescription" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
-                      <Component id="btn_critem" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <Component id="btn_MedCap" min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="btn_Vdoctors" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Component id="btn_logout" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -143,14 +134,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Doctor"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btn_Vchannel">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="View Channel"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_doctorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_Vdoctors">
               <Properties>
@@ -159,6 +145,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="View Doctors"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_VdoctorsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_logout">
               <Properties>
@@ -167,30 +156,20 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_logoutActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_Cchannel">
+            <Component class="javax.swing.JButton" name="btn_MedCap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Create Channel"/>
+                <Property name="text" type="java.lang.String" value="Medicine Cabinet"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btn_critem">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Create Item"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btn_Vprescription">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="View Prescription"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_MedCapActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
